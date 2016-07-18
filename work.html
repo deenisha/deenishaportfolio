@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<!--<link rel="stylesheet" type="text/css" href="css/filterize.css" /> -->
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+		<script src="https://use.fontawesome.com/b21961d342.js"></script>
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+  	
+	<title>Capstone 3</title>
+</head>
+<body>
+	<header class="cd-header">
+		<div class="cd-logo"><a href="#0"><img src="img/logo.png" alt="Logo"></a></div>
+
+		<nav>
+			<ul class="cd-secondary-nav">
+				
+			</ul>
+		</nav> <!-- cd-nav -->
+
+		<a class="cd-primary-nav-trigger" href="#0">
+			<span class="cd-menu-icon"></span>
+		</a> <!-- cd-primary-nav-trigger -->
+	</header>
+
+	<nav>
+		<ul class="cd-primary-nav">
+			<li class="cd-label"><a href="index.html">Home</a></li>
+			<li class="cd-label"><a href="about.html">About</a></li>
+
+			<li class="cd-label"><a href="work.html">Work</a></li>
+
+
+			<li class="cd-label">Get in Touch</li>
+
+			<li><a href="mailto:deenishasarah@gmail.com?Subject=Hello">deenishasarah@gmail.com</a></li>
+
+			<li class="cd-label">Follow</li>
+			
+			<li class="cd-social cd-instagram"><a href="#0">Instagram</a></li>
+			<li class="cd-social cd-twitter"><a href="#0">Twitter</a></li>
+		</ul>
+	</nav>
+
+	<section class="cd-intro">
+		<h1>Hi, I’m Deenisha, a 
+		<br>
+		Front-end Web Developer
+		<br> 
+who builds cool stuff</h1>
+	</section>
+
+	<!-- Gallery starts -->
+<div id="filterize">
+	<section class="gallery">
+		<!-- Gallery navigation -->
+		<input id="all-categories-filter" name="filter-buttons" type="radio" class="selector-all" checked="checked" />
+		<label for="all-categories-filter" class="label-all">All</label>
+		
+		<input id="category-1-filter" name="filter-buttons" type="radio" class="selector-category-1" />
+		<label for="category-1-filter" class="label-category-1">Design</label>
+		
+		<input id="category-2-filter" name="filter-buttons" type="radio" class="selector-category-2" />
+		<label for="category-2-filter" class="label-category-2">Web</label>
+		
+		<input id="category-3-filter" name="filter-buttons" type="radio" class="selector-category-3" />
+		<label for="category-3-filter" class="label-category-3">Branding</label>
+
+		<input id="category-4-filter" name="filter-buttons" type="radio" class="selector-category-4" />
+		<label for="category-4-filter" class="label-category-4">Fun</label>
+		<!-- / Gallery navigation -->
+			
+		<div class="clrfx-1"></div>
+			
+		<ul class="gallery-items">
+
+			<!-- Image 1 -->
+			<li class="category-2">
+				<!-- Small image -->
+				<img class="fade-in one" src="img/small/1.jpg" alt="Beaty apartments" />
+				<!-- Image overlay content -->
+				<div class="overlay">
+					<!-- Category icon -->
+					<div class="category"><span class="icon">&#xf108;</span></div>
+					<!-- Image overlay description -->
+					<h3>Beaty Apartments</h3>
+					<p>Promotional landing page for 40 Beaty apartments</p>
+					<div class="divider"></div>
+					<!-- Image link icons -->
+					<div class="image-links">
+						<a class="icon tooltip-1 link-1" href="#image-1">&#xf00e;<span>View</span></a>
+					</div>
+				</div>
+				<!-- Lighbox popup -->
+				<div id="image-1" class="lightbox">
+					<!-- Lightbox image -->
+					<div class="image-wrap">
+						<a class="close-overlay" href="#close"></a>
+						<img src="img/big/1.jpg" alt="Beaty apartments large" />
+					</div>
+					<!-- Lightbox content -->
+					<div class="lightbox-caption">
+						<!-- Category icon -->
+						<div class="category-2"><span class="icon">&#xf00e;</span></div>
+						<!-- Lightbox image description -->
+						<span class="title">Beaty Apartments</span>
+						<div class="divider-2"></div>
+						<p>40 Beaty has been designed to let you live luxuriously while maximizing on square footage.</p>
+						
+						<div class="read-more">
+							<a href="http://www.beatyapartments.com/" target="_blank" class="more">Check it out <span class="icon">&#xf105;</span></a>
+						</div>
+						
+						<!-- Lightbox navigation -->
+						<div class="lightbox-navigation">
+							<a class="previous icon" href="#image-9">&#xf104;</a>
+							<a class="next icon" href="#image-2">&#xf105;</a>
+							<a class="close icon" href="#close">&#xf010;</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- / Image 1 -->
+
+			<!-- Image 2 -->
+			<li class="category-2">
+				<!-- Small image -->
+				<img class="fade-in two" src="img/small/2.jpg" alt="UCCI apartments" />
+				<!-- Image overlay content -->
+				<div class="overlay">
+					<!-- Category icon -->
+					<div class="category"><span class="icon">&#xf108</span></div>
+					<!-- Image overlay description -->
+					<h3>UCCI 50+</h3>
+					<p>Promotional landing page for UCCI apartments</p>
+					<div class="divider"></div>
+					<!-- Image link icons -->
+					<div class="image-links">
+						<a class="icon tooltip-1 link-1" href="#image-2">&#xf00e;<span>View</span></a>
+					</div>
+				</div>
+				<!-- Lighbox popup -->
+				<div id="image-2" class="lightbox">
+					<!-- Lightbox image -->
+					<div class="image-wrap">
+						<a class="close-overlay" href="#close"></a>
+						<img src="img/big/2.jpg" alt="iUCCI apartments large" />
+					</div>
+					<!-- Lightbox content -->
+					<div class="lightbox-caption">
+						<!-- Category icon -->
+						<div class="category-2"><span class="icon">&#xf108;</span></div>
+						<!-- Lightbox image description -->
+						<span class="title">UCCI 50+</span>
+						<div class="divider-2"></div>
+						<p>Live in the Award-Winning Townhomes at York Mills & Leslie.</p>
+						
+						<div class="read-more">
+							<a href="http://downsizer.ucciproperties.com/" target="_blank" class="more">Check it out <span class="icon">&#xf105;</span></a>
+						</div>
+						
+						<!-- Lightbox navigation -->
+						<div class="lightbox-navigation">
+							<a class="previous icon" href="#image-1">&#xf104;</a>
+							<a class="next icon" href="#image-3">&#xf105;</a>
+							<a class="close icon" href="#close">&#xf010;</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- / Image 2 -->
+
+			<!-- Image 3 -->
+			<li class="category-2 category-3">
+				<!-- Small image -->
+				<img class="fade-in three" src="img/small/3.jpg" alt="CRB Living Green" />
+				<!-- Image overlay content -->
+				<div class="overlay">
+					<!-- Category icon -->
+					<div class="category"><span class="icon">&#xf108;</span></div>
+					<!-- Image overlay description -->
+					<h3>CRB Living Green</h3>
+					<p>Go Green to Win.</p>
+					<div class="divider"></div>
+					<!-- Image link icons -->
+					<div class="image-links">
+						<a class="icon tooltip-1 link-1" href="#image-3">&#xf00e;<span>View</span></a>
+					</div>
+				</div>
+				<!-- Lighbox popup -->
+				<div id="image-3" class="lightbox">
+					<!-- Lightbox image -->
+					<div class="image-wrap">
+						<a class="close-overlay" href="#close"></a>
+						<img src="img/big/3.jpg" alt="CRB Living Green large" />
+					</div>
+					<!-- Lightbox content -->
+					<div class="lightbox-caption">
+						<!-- Category icon -->
+						<div class="category-2"><span class="icon">&#xf108;</span></div>
+						<!-- Lightbox image description -->
+						<span class="title">CRB Living Green</span>
+						<div class="divider-2"></div>
+						<p>Tell us how you are living green using #liveingreen on Facebook and Twitter and be entered to win a $250 Visa Gift Card!</p>
+						
+						<div class="read-more">
+							<a href="http://www.crbliveingreen.ca/" tgarget="_blank" class="more">Check it out <span class="icon">&#xf105;</span></a>
+						</div>
+						
+						<!-- Lightbox navigation -->
+						<div class="lightbox-navigation">
+							<a class="previous icon" href="#image-2">&#xf104;</a>
+							<a class="next icon" href="#image-4">&#xf105;</a>
+							<a class="close icon" href="#close">&#xf010;</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<!-- / Image 3 -->
+
+		</ul>
+	</section>
+</div>
+<!-- / Gallery ends -->
+
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>

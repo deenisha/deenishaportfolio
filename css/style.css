@@ -1,0 +1,1439 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('fonts/fontawesome-webfont.eot?v=3.0.1');
+  src: url('fonts/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
+    url('fonts/fontawesome-webfont.woff?v=3.0.1') format('woff'),
+    url('fonts/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+  color: rgba(2, 23, 37, 0.7);
+  background-color: #fff;
+}
+body.overflow-hidden {
+  /* when primary navigation is visible, the content in the background won't scroll */
+  overflow: hidden;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* -------------------------------- 
+
+containers
+
+-------------------------------- */
+.cd-container {
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  width: 90%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+.cd-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* -------------------------------- 
+
+Main stuff 
+
+-------------------------------- */
+html, body {
+  height: 100%;
+}
+.intro-b {
+    float: left;
+    text-align: center;
+}
+.intro-b .horizontal-line {
+    margin:20px 0
+}
+.cl3 {
+    width: 100%;
+}
+h3.description-title {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+p.letterSpacingSMALL {
+    font-size: 0.85em;
+}
+h2 {
+    margin: 40px 0;
+    font-size: 2em;
+    font-style: italic;
+    line-height: 1.5em;
+    text-align: center;
+}
+.heart {
+  color: #e55488;
+}
+.eye {
+  color: #e55488;
+}
+
+.cd-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(2, 23, 37, 0.95);
+  height: 50px;
+  width: 100%;
+  z-index: 3;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media only screen and (min-width: 1170px) {
+  .cd-header {
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .cd-header.is-fixed {
+    /* when the user scrolls down, hide the header right above the viewport */
+    position: fixed;
+    top: -80px;
+    background-color: rgba(2, 23, 37, 0.96);
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+  }
+  .cd-header.is-visible {
+    /* if the user changes the scrolling direction, show this header */
+    -webkit-transform: translate3d(0, 100%, 0);
+    -moz-transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    -o-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  .cd-header.menu-is-open {
+    /* adds a background color to the header when the navigation is open */
+    background-color: rgba(2, 23, 37, 0.96);
+  }
+}
+
+.cd-logo {
+  display: block;
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: .875em;
+}
+.cd-logo img {
+  display: block;
+}
+
+.cd-secondary-nav {
+  position: absolute;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 10em;
+  /* hidden on small devices */
+  display: none;
+}
+.cd-secondary-nav li {
+  display: inline-block;
+  margin-left: 2.2em;
+}
+.cd-secondary-nav a {
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.cd-primary-nav-trigger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  background-color: #e55488;
+}
+.cd-primary-nav-trigger .cd-menu-text {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  /* hide the text on small devices */
+  display: none;
+}
+.cd-primary-nav-trigger .cd-menu-icon {
+  /* this span is the central line of the menu icon */
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 18px;
+  height: 2px;
+  background-color: #e55488;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  /* these are the upper and lower lines in the menu icon */
+}
+.cd-primary-nav-trigger .cd-menu-icon::before, .cd-primary-nav-trigger .cd-menu-icon:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #e55488;
+  right: 0;
+  -webkit-transition: -webkit-transform .3s, top .3s, background-color 0s;
+  -moz-transition: -moz-transform .3s, top .3s, background-color 0s;
+  transition: transform .3s, top .3s, background-color 0s;
+}
+.cd-primary-nav-trigger .cd-menu-icon::before {
+  top: -5px;
+}
+.cd-primary-nav-trigger .cd-menu-icon::after {
+  top: 5px;
+}
+.cd-primary-nav-trigger .cd-menu-icon.is-clicked {
+  background-color: rgba(255, 255, 255, 0);
+}
+.cd-primary-nav-trigger .cd-menu-icon.is-clicked::before, .cd-primary-nav-trigger .cd-menu-icon.is-clicked::after {
+  background-color: #fff;
+}
+.cd-primary-nav-trigger .cd-menu-icon.is-clicked::before {
+  top: 0;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.cd-primary-nav-trigger .cd-menu-icon.is-clicked::after {
+  top: 0;
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+.cd-primary-nav {
+  /* by default it's hidden - on top of the viewport */
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #e55488;
+  z-index: 2;
+  text-align: center;
+  padding: 50px 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: auto;
+  /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.cd-primary-nav li {
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: .2em 0;
+}
+.cd-primary-nav a {
+  display: inline-block;
+  padding: .4em 1em;
+  border-radius: 0.25em;
+  -webkit-transition: background 0.2s;
+  -moz-transition: background 0.2s;
+  transition: background 0.2s;
+}
+.no-touch .cd-primary-nav a:hover {
+  background-color: #9EC77F;
+}
+.cd-primary-nav .cd-label {
+  color: #06446e;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin: 2.4em 0 .8em;
+}
+.cd-primary-nav .cd-social {
+  display: inline-block;
+  margin: 0 .4em;
+}
+.cd-primary-nav .cd-social a {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-image: url("../img/cd-socials.svg");
+  background-repeat: no-repeat;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+.cd-primary-nav .cd-facebook a {
+  background-position: 0 0;
+}
+.cd-primary-nav .cd-instagram a {
+  background-position: -44px 0;
+}
+.cd-primary-nav .cd-dribbble a {
+  background-position: -88px 0;
+}
+.cd-primary-nav .cd-twitter a {
+  background-position: -132px 0;
+}
+.cd-primary-nav.is-visible {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.cd-intro {
+  position: relative;
+  height: 100%;
+  background: url("../img/cd-background-img1.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.cd-intro h1 {
+  position: absolute;
+  width: 90%;
+  max-width: 1170px;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  color: rgba(2, 23, 37, 0.7);
+  font-size: 20px;
+  font-size: 2.1rem;
+  font-weight:700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-primary-nav-trigger {
+    width: 100px;
+    padding-left: 1em;
+    background-color: transparent;
+    height: 30px;
+    line-height: 30px;
+    right: 2.2em;
+    top: 50%;
+    bottom: auto;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .cd-primary-nav-trigger .cd-menu-text {
+    display: inline-block;
+  }
+  .cd-primary-nav-trigger .cd-menu-icon {
+    left: auto;
+    right: 1em;
+    -webkit-transform: translateX(0) translateY(-50%);
+    -moz-transform: translateX(0) translateY(-50%);
+    -ms-transform: translateX(0) translateY(-50%);
+    -o-transform: translateX(0) translateY(-50%);
+    transform: translateX(0) translateY(-50%);
+  }
+    .cd-logo {
+    left: 2.6em;
+  }
+  .cd-header {
+    height: 80px;
+    background: transparent;
+    box-shadow: none;
+  }
+  .cd-secondary-nav {
+    display: block;
+  }
+    .cd-primary-nav {
+    padding: 80px 0;
+  }
+   .cd-intro h1 {
+    font-size: 30px;
+    font-size: 2.875rem;
+    text-transform: uppercase;
+  }
+  .cl3 {
+    width: 33.333333%;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-intro {
+    height: 700px;
+  }
+    .cd-primary-nav li {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+  .cd-primary-nav .cd-label {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  .cd-main-content p {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+}
+
+.cd-main-content {
+  position: relative;
+  z-index: 1;
+}
+.cd-main-content p {
+  line-height: 1.6;
+  margin: 2em 0;
+}
+
+/***** 2.2. Gallery reset *****/
+
+.gallery * {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 100%;
+	font-family: 'Droid Sans', Arial, Helvetica, sans-serif; /* Edit this if you want to match the font with your design */
+	vertical-align: baseline;
+	line-height: normal;
+	-webkit-font-smoothing: antialiased; /* Fix for Safari font rendering bug */
+}
+.gallery > ol,
+.gallery > ul,
+.gallery > li {
+	list-style: none;
+}
+.gallery > table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.gallery > section {
+	display: block;
+}
+/* Note: If you experience issues with reset above, please adjust the selectors and values according to your template/website.
+When adjusting the reset is adviced to check all the elements on your page, including the footer, as some elements might not show as expected if reset is changed or not configured properly */
+
+
+/*---------------------------------------------------
+	3. Fade in effect on page load
+---------------------------------------------------*/
+
+/***** 3.1. Keyframes animation (Note: IE9 doesn't support keyframes) *****/
+
+@-webkit-keyframes fadeIn {
+	from { opacity: 0; } to { opacity: 1; }
+}
+@-moz-keyframes fadeIn { 
+	from { opacity: 0; } to { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+	from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes fadeIn {
+	from { opacity: 0; } to { opacity: 1; }
+}
+ 
+/***** 3.2. Fade in effects *****/
+
+.fade-in {
+	/* Opacity 0 so we hide the elements before animation starts */
+	opacity: 0;
+	/* Trigger for our fade-in selector and a value of how many times does it repeats on page load */
+	-webkit-animation: fadeIn ease-in 1;
+	-moz-animation: fadeIn ease-in 1;
+	-o-animation: fadeIn ease-in 1;
+	animation: fadeIn ease-in 1;
+	/* Attribute to keep the last keyframe value after the animation is completed */
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	/* Duration of the animation */
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	animation-duration: 1s;
+}
+
+/***** 3.3. Image delays *****/
+
+/* Delay of image 1 */
+.fade-in.one {
+	-webkit-animation-delay: 0.3s;
+	-moz-animation-delay: 0.3s;
+	animation-delay: 0.3s;
+}
+/* Delay of image 2 */
+.fade-in.two {
+	-webkit-animation-delay: 0.6s;
+	-moz-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+}
+/* Delay of image 3 */
+.fade-in.three {
+	-webkit-animation-delay: 0.9s;
+	-moz-animation-delay: 0.9s;
+	animation-delay: 0.9s;
+}
+
+
+/*---------------------------------------------------
+	4. Gallery styles
+---------------------------------------------------*/
+
+/***** 4.1. Basic styles *****/
+
+#filterize {
+	width: 1000px; /* Set the width of the gallery to fit your layout if you're not using a parent wrapper with already set width */
+	height: 100%;
+	position: relative;
+	margin: 50px auto;
+}
+.gallery {
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+.page-info {
+	float: right;
+	font-size: 11px;
+	color: #999;
+	padding-top: 10px;
+}
+.clrfx-1 {
+	display: block;
+	width: 100%;
+	clear: both;
+}
+.icon {
+	font-family: 'FontAwesome';
+	font-weight: normal;
+}
+
+/***** 4.2. Filter buttons *****/
+
+.gallery label {
+	font-size: 0.8em;
+	color: #999;
+	width: auto;
+	height: 40px;
+	cursor: pointer;
+	float: left;
+	margin: 0 10px 50px 0;
+	padding: 10px 24px;
+	line-height: 22px;
+	text-transform: uppercase;
+}
+.gallery label:hover {
+	color: #222;
+}
+.gallery input.selector-all:checked ~ label.label-all,
+.gallery input.selector-category-1:checked ~ label.label-category-1,
+.gallery input.selector-category-2:checked ~ label.label-category-2,
+.gallery input.selector-category-3:checked ~ label.label-category-3,
+.gallery input.selector-category-4:checked ~ label.label-category-4 {
+	background: #e55488;
+	color: #fff;
+}
+.gallery input.selector-category-1:checked ~ .gallery-items li:not(.category-1) div,
+.gallery input.selector-category-2:checked ~ .gallery-items li:not(.category-2) div,
+.gallery input.selector-category-3:checked ~ .gallery-items li:not(.category-3) div,
+.gallery input.selector-category-4:checked ~ .gallery-items li:not(.category-4) div {
+	display: none;
+}
+.gallery input {
+	display: none;
+}
+
+/***** 4.3. Gallery items *****/
+
+.gallery-items {
+	position: relative;
+	margin: 0px auto;
+	float: left;
+}
+.gallery-items li {
+	float: left;
+	margin: 0 5% 5% 0;
+	width: 30%;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+	cursor: default;
+	background: transparent;
+}
+.gallery-items li:nth-child(3n) {
+	margin-right: 0;
+}
+.gallery-items li img {
+	display: block;
+	width: 100%;
+	position: relative;
+}
+
+/***** 4.4. Items overlay *****/
+
+.gallery-items li .overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	cursor: auto;
+	background: #e55488;
+	z-index: 2;
+}
+.gallery-items li .category,
+.gallery-items li .category-2 {
+	display: block;
+	width: auto;
+	color: #9EC77F;
+	font-size: 3em;
+}
+.gallery-items li .category {
+	padding: 20% 10% 5% 10%;
+}
+.gallery-items li .category-2 {
+	padding: 0 0 5% 0;
+}
+.gallery-items li h3,
+.gallery-items li .overlay p {
+	color: #fff;
+	display: block;
+	width: auto;
+	position: relative;
+}
+.gallery-items li h3 {
+	font-size: 1em;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 0 10%;
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis; 
+	overflow: hidden;
+}
+.gallery-items li .overlay p {
+	font-size: 0.7em;
+	padding: 5% 10%;
+	line-height: 1.6em;
+}
+.gallery-items li .divider {
+	width: 70%;
+	border-top: solid 1px #9EC77F;
+	margin-left: 10%;
+}
+.image-links {
+	height: auto;
+	margin: 5% 0 0 10%;
+}
+.gallery-items li .image-links a {
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	margin: 0 5% 0 0;
+	color: #fff;
+	font-size: 1em;
+}
+.gallery-items li .image-links a:hover {
+	color: #9EC77F;
+	text-decoration: none;
+}
+
+/***** 4.5. Lightbox *****/
+
+.lightbox {
+	width: 0px;
+	height: 0px;
+	position: fixed;
+	overflow: hidden;
+	left: 0px;
+	top: 0px;
+	background-color: rgba(0,0,0,0.9);
+	z-index: 9999;
+}
+.lightbox:target {
+	width: auto;
+	height: auto;
+	bottom: 0px;
+	right: 0px;
+}
+.lightbox-caption {
+	display: block;
+	text-align: left;
+	color: #fff;
+	cursor: auto;
+	position: relative;
+	background: #e55488;
+	padding: 5%;
+	float: right;
+	width: 35%;
+	height: 100%;
+	z-index: 3;
+}
+.lightbox-caption .divider-2 {
+	border-top: solid 1px #9EC77F;
+	margin: 2% 0;
+	display: block;
+}
+.lightbox-caption span.title {
+	font-size: 1.6em;
+	text-transform: uppercase;
+	display: inline-block;
+}
+.lightbox-caption p {
+	line-height: 1.5em;
+	font-size: 0.75em;
+	padding-top: 4px;
+	display: inline-block;
+}
+#list {
+	font-size: 0.75em;
+	display: block;
+	margin: 5% 0;
+	float: left;
+}
+#list > div {
+	display: inline-block;
+	width: 100%;
+	clear: both;
+	margin: 1% 0;
+}
+#list > div:before {
+	font-family: 'FontAwesome';
+	content:"\f00c";
+	padding-right: 2%;
+	vertical-align: middle;
+}
+.lightbox-caption .read-more a.more {
+	color: #fff;
+	font-size: 0.8em;
+	text-decoration: none;
+	display: inline-block;
+	margin: 3% 0;
+	padding: 4%;
+	background: #9EC77F;
+	float: left;
+	font-weight: 700;
+}
+.lightbox-caption .read-more a.more:hover {
+	background: #9EC77F;
+}
+.lightbox-caption .read-more a.more span {
+	padding-left: 6px;
+	font-size: 1.2em;
+	vertical-align: top;
+}
+.gallery-items li .image-wrap {
+	position: relative;
+	display: block;
+	float: left;
+	width: 65%;
+	height: 100%;
+	padding: 5%;
+}
+.gallery-items li .lightbox img {
+	height: auto;
+	max-height: 100%;
+	width: auto;
+	max-width: 100% !important;
+	display: block;
+	vertical-align: middle;
+	margin: 0 auto;
+	position: relative;
+	z-index: 2;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+}
+x:-o-prefocus, .lightbox img {
+	height: 100% !important; /* Hack for Opera below ver. 12 */
+}
+.lightbox a.close-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+
+.lightbox-navigation {
+	display: block;
+	clear: both;
+}
+.lightbox-navigation .previous,
+.lightbox-navigation .next {
+	color: #9EC77F;
+	font-size: 4em;
+	text-decoration: none;
+	z-index: 999;
+	margin: 10% 10% 0 0;
+	display: inline-block;
+}
+.lightbox-navigation .previous:hover,
+.lightbox-navigation .next:hover {
+	color: #fff;
+}
+.lightbox a.close {
+	position: absolute;
+	top: 10%;
+	right: 10%;
+	font-size: 1em;
+	color: #9EC77F;
+	text-decoration: none;
+	z-index: 999;
+}
+.lightbox a.close:hover {
+	color: #fff;
+}
+
+
+/***** 4.6 Tooltips *****/
+
+a.tooltip-1 span,
+a.tooltip-2 span {
+	background: #fff;
+	color: #555;
+	font-size: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 10px;
+	height: auto;
+	width: auto;
+	margin: 0 auto;
+	position: absolute;
+	pointer-events: none;
+	visibility: hidden;
+}
+a.tooltip-1 span {
+	min-width: 80px;
+	left: -33px;
+	bottom: 30px;
+	right: 0;
+	top: auto;
+	white-space: normal;
+}
+a.tooltip-2 span {
+	left: auto;
+	bottom: auto;
+	right: 60px;
+	top: -12px;
+	white-space: nowrap;
+}
+a.tooltip-1:hover span,
+a.tooltip-2:hover span {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	visibility: visible;
+}
+a.tooltip-1 span:after,
+a.tooltip-2 span:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-style: solid;
+	border-color: #FFFFFF transparent transparent transparent;
+}
+a.tooltip-1 span:after {
+	top: auto;
+	left: 30px;
+	bottom: -18px;
+}
+a.tooltip-2 span:after {
+	top: 9px;
+	right: -16px;
+	bottom: auto;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+a.tooltip-1 b {
+	display: block;
+	color: #5B8AB5;
+}
+
+/*---------------------------------------------------
+	5. Transitions and animations
+---------------------------------------------------*/
+
+/***** 5.1 Opacity *****/
+
+.gallery-items li .image-links a,
+.lightbox-caption span.title,
+.lightbox-caption p,
+.lightbox-caption #list > div,
+.lightbox-caption .read-more,
+.lightbox-caption .category-2,
+.gallery-items li .lightbox .image-wrap,
+a.tooltip-1 span,
+a.tooltip-2 span,
+.share-icons a {
+	opacity: 0;
+}
+.gallery input.selector-all:checked ~ .gallery-items li,
+.gallery input.selector-category-1:checked ~ .gallery-items .category-1,
+.gallery input.selector-category-2:checked ~ .gallery-items .category-2,
+.gallery input.selector-category-3:checked ~ .gallery-items .category-3,
+.gallery input.selector-category-4:checked ~ .gallery-items .category-4,
+.gallery-items li:hover .image-links a,
+.lightbox:target .lightbox-caption span.title,
+.lightbox:target .lightbox-caption p,
+.lightbox:target .lightbox-caption #list > div,
+.lightbox:target .lightbox-caption .read-more,
+.lightbox:target .lightbox-caption .category-2,
+.gallery-items li .lightbox:target .image-wrap,
+.lightbox-navigation,
+a.tooltip-1:hover span,
+a.tooltip-2:hover span,
+.lightbox:target .lightbox-caption > .share-icons a {
+	opacity: 1;
+}
+.gallery input:checked ~ .gallery-items li:not(div) {
+	opacity: 0.15;
+}
+
+/***** 5.2 Easings *****/
+
+.pagination a.page,
+.gallery-items li p,
+.gallery-items li h3,
+.gallery label,
+.lightbox-caption * {
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.gallery-items li,
+.gallery-items li .overlay {
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+a.tooltip-1 span,
+a.tooltip-2 span,
+.share-icons a {
+	-webkit-transition: opacity 0.2s ease-in-out;
+	-moz-transition: opacity 0.2s ease-in-out;
+	-o-transition: opacity 0.2s ease-in-out;
+	-ms-transition: opacity 0.2s ease-in-out;
+	transition: opacity 0.2s ease-in-out;
+}
+.gallery-items li .image-links a,
+.lightbox-caption .read-more,
+.lightbox-caption .category-2 {
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	-o-transition: opacity 0.3s ease-in-out;
+	-ms-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+}
+
+/***** 5.3 Animations *****/
+
+.gallery-items li:hover .overlay,
+.gallery-items li:hover .overlay p,
+.gallery-items li:hover h3,
+.lightbox:target .lightbox-caption span.title,
+.lightbox:target .lightbox-caption p,
+.lightbox:target .lightbox-caption #list div {
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	-o-transform: translateX(0px);
+	-ms-transform: translateX(0px);
+	transform: translateX(0px);
+}
+.gallery-items li .overlay,
+.gallery-items li h3,
+.gallery-items li .overlay p {
+	-webkit-transform: translateX(-100%);
+	-moz-transform: translateX(-100%);
+	-o-transform: translateX(-100%);
+	-ms-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+.lightbox-caption span.title,
+.lightbox-caption p,
+.lightbox-caption #list div {
+	-webkit-transform: translateX(200%);
+	-moz-transform: translateX(200%);
+	-o-transform: translateX(200%);
+	-ms-transform: translateX(200%);
+	transform: translateX(200%);
+}
+.gallery-items li:hover h3 {
+	-webkit-transition-delay: 0.3s;
+	-moz-transition-delay: 0.3s;
+	-o-transition-delay: 0.3s;
+	-ms-transition-delay: 0.3s;
+	transition-delay: 0.3s;
+}
+.gallery-items li:hover .overlay p {
+	-webkit-transition-delay: 0.5s;
+	-moz-transition-delay: 0.5s;
+	-o-transition-delay: 0.5s;
+	-ms-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+.gallery-items li:hover a.link-1 {
+	-webkit-transition-delay: 0.8s;
+	-moz-transition-delay: 0.8s;
+	-o-transition-delay: 0.8s;
+	-ms-transition-delay: 0.8s;
+	transition-delay: 0.8s;
+}
+.gallery-items li:hover a.link-2 {
+	-webkit-transition-delay: 0.9s;
+	-moz-transition-delay: 0.9s;
+	-o-transition-delay: 0.9s;
+	-ms-transition-delay: 0.9s;
+	transition-delay: 0.9s;
+}
+.gallery-items li:hover a.link-3 {
+	-webkit-transition-delay: 1s;
+	-moz-transition-delay: 1s;
+	-o-transition-delay: 1s;
+	-ms-transition-delay: 1s;
+	transition-delay: 1s;
+}
+.gallery-items li:hover a.link-4 {
+	-webkit-transition-delay: 1.1s;
+	-moz-transition-delay: 1.1s;
+	-o-transition-delay: 1.1s;
+	-ms-transition-delay: 1.1s;
+	transition-delay: 1.1s;
+}
+.gallery-items li:hover a.link-5 {
+	-webkit-transition-delay: 1.2s;
+	-moz-transition-delay: 1.2s;
+	-o-transition-delay: 1.2s;
+	-ms-transition-delay: 1.2s;
+	transition-delay: 1.2s;
+}
+.lightbox:target .lightbox-caption .category-2 {
+	-webkit-transition-delay: 0.3s;
+	-moz-transition-delay: 0.3s;
+	-o-transition-delay: 0.3s;
+	-ms-transition-delay: 0.3s;
+	transition-delay: 0.3s;
+}
+.lightbox:target .lightbox-caption span.title {
+	-webkit-transition-delay: 0.5s;
+	-moz-transition-delay: 0.5s;
+	-o-transition-delay: 0.5s;
+	-ms-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+.lightbox:target .lightbox-caption p {
+	-webkit-transition-delay: 0.7s;
+	-moz-transition-delay: 0.7s;
+	-o-transition-delay: 0.7s;
+	-ms-transition-delay: 0.7s;
+	transition-delay: 0.7s;
+}
+.lightbox:target #list > .list-1 {
+	-webkit-transition-delay: 0.9s;
+	-moz-transition-delay: 0.9s;
+	-o-transition-delay: 0.9s;
+	-ms-transition-delay: 0.9s;
+	transition-delay: 0.9s;
+}
+.lightbox:target #list > .list-2 {
+	-webkit-transition-delay: 1s;
+	-moz-transition-delay: 1s;
+	-o-transition-delay: 1s;
+	-ms-transition-delay: 1s;
+	transition-delay: 1s;
+}
+.lightbox:target #list > .list-3 {
+	-webkit-transition-delay: 1.1s;
+	-moz-transition-delay: 1.1s;
+	-o-transition-delay: 1.1s;
+	-ms-transition-delay: 1.1s;
+	transition-delay: 1.1s;
+}
+.lightbox:target #list > .list-4 {
+	-webkit-transition-delay: 1.2s;
+	-moz-transition-delay: 1.2s;
+	-o-transition-delay: 1.2s;
+	-ms-transition-delay: 1.2s;
+	transition-delay: 1.2s;
+}
+.lightbox:target #list > .list-5 {
+	-webkit-transition-delay: 1.3s;
+	-moz-transition-delay: 1.3s;
+	-o-transition-delay: 1.3s;
+	-ms-transition-delay: 1.3s;
+	transition-delay: 1.3s;
+}
+.lightbox:target .lightbox-caption .read-more {
+	-webkit-transition-delay: 1.7s;
+	-moz-transition-delay: 1.7s;
+	-o-transition-delay: 1.7s;
+	-ms-transition-delay: 1.7s;
+	transition-delay: 1.7s;
+}
+.lightbox .image-wrap {
+	-webkit-transition: opacity 0.4s linear;
+	-moz-transition: opacity 0.4s linear;
+	-o-transition: opacity 0.4s linear;
+	-ms-transition: opacity 0.4s linear;
+	transition: opacity 0.4s linear;
+}
+/*---------------------------------------------------
+	6. Responsive queries - Width
+---------------------------------------------------*/
+
+/***** Max width 1366px *****/
+
+@media screen and (max-width:1366px){
+	.share-icons {
+		margin-left: 0;
+		width: 100%;
+	}
+}
+
+/***** Max width 1024px *****/
+
+@media screen and (max-width:1024px){
+	#filterize {
+		width: 94%;
+	}
+	.gallery-items li .image-wrap,
+	.lightbox-caption {
+		width: 100%;
+		left: 0;
+		position: absolute;
+	}
+	.gallery-items li .image-wrap {
+		top: 0;
+		height: 55%;
+	}
+	.lightbox-caption {
+		height: 45%;
+		bottom: 0;
+	}
+	.gallery-items li .category {
+		display: none;
+	}
+	.gallery-items li h3 {
+		padding-top: 20%;
+	}
+	.gallery-items li .category-2 {
+		display: inline-block;
+		padding: 0 5% 0 0;
+	}
+	.lightbox-caption span.title {
+		font-size: 1.4em;
+	}
+	.lightbox-caption p {
+		padding-bottom: 2%;
+	}
+	#list {
+		display: none;
+	}
+	.lightbox-caption .read-more a.more {
+		padding: 2%;
+	}
+	.lightbox:target .read-more {
+		-webkit-transition-delay: 1s !important;
+		-moz-transition-delay: 1s !important;
+		-o-transition-delay: 1s !important;
+		-ms-transition-delay: 1s !important;
+		transition-delay: 1s !important;
+	}
+	.share-icons {
+		width: 30%;
+		margin: 5% 0 0 10%;
+	}
+	
+	.lightbox-navigation {
+		float: right;
+		clear: none;
+		display: inline-block;
+		width: 30%;
+		text-align: right;
+	}
+	.lightbox-navigation .previous,
+	.lightbox-navigation .next {
+		margin-top: 3%;
+	}
+	.lightbox-navigation .previous {
+		margin-right: 15%;
+	}
+	.lightbox-navigation .next {
+		margin-right: 0;
+	}
+	.lightbox a.close {
+		right: 5%;
+	}
+}
+
+/***** Min width 600px and Max width 800px *****/
+
+@media screen and (min-width:600px) and (max-width:800px){
+	.gallery-items li h3 {
+		font-size: 1em;
+		white-space: nowrap; 
+		text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+		-ms-text-overflow: ellipsis; 
+		overflow: hidden;
+	}
+}
+
+/***** Max width 600px *****/
+
+@media screen and (max-width:600px){
+	.gallery-items li {
+		width: 47%;
+		margin-right: 6%;
+	}
+	.gallery-items li:nth-child(3n) {
+		margin-right: 6%;
+	}
+	.gallery-items li:nth-child(2n) {
+		margin-right: 0;
+	}
+	.lightbox-caption .read-more a.more {
+		padding: 3%;
+	}
+	.share-icons {
+		display: none; /* We need to hide share icons because of lack of horizontal space */
+	}
+}
+
+/***** Max width 599px *****/
+
+@media screen and (max-width:599px){
+	.gallery label {
+		width: 100%;
+		text-align: center;
+		margin: 0 0 10px 0;
+	}
+	.gallery label:last-of-type {
+		margin-bottom: 40px;
+	}
+	.lightbox-caption .read-more a.more {
+		padding: 4%;
+	}
+}
+
+/***** Max width 380px *****/
+
+@media screen and (max-width:380px){
+	.gallery-items li {
+		width: 100%;
+		margin-right: 0;
+	}
+	.gallery-items li h3 {
+		padding-top: 0;
+	}
+	.gallery-items li .category,
+	.gallery-items li .category-2 {
+		font-size: 3em;
+	}
+	.gallery-items li .category {
+		display: block;
+	}
+	.gallery-items li h3 {
+		font-size: 1em;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+		-ms-text-overflow: ellipsis;
+	}
+}
+
+/*---------------------------------------------------
+	7. Responsive queries - Height
+---------------------------------------------------*/
+
+/***** Min width 1025px and Max height 640px *****/
+
+@media screen  and (min-width:1025px) and (max-height:768px){
+	.gallery-items li .category-2 {
+		font-size: 3em;
+	}
+	.lightbox-caption span.title {
+		font-size: 1.2em;
+	}
+	.lightbox-caption p {
+		padding-bottom: 3%;
+	}
+	#list {
+		display: none;
+	}
+	.lightbox-navigation .previous,
+	.lightbox-navigation .next {
+		margin-top: 2%;
+	}
+}
+
+/***** Min width 1025px and Max height 480px *****/
+
+@media screen  and (min-width:1025px) and (max-height:480px){
+	.share-icons {
+		display: none;
+	}
+	.lightbox-caption p {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+		-ms-text-overflow: ellipsis;
+		width: 100%;
+	}
+	.lightbox:target .read-more {
+	-webkit-transition-delay: 1s !important;
+	-moz-transition-delay: 1s !important;
+	-o-transition-delay: 1s !important;
+	-ms-transition-delay: 1s !important;
+	transition-delay: 1s !important;
+	}
+}
+
+/***** Min width 1025px and Max height 360px *****/
+
+@media screen  and (min-width:1025px) and (max-height:360px){
+	.gallery-items li .category-2 {
+		display: none;
+	}
+}
+
+/***** Max width 1024px and Max height 800px *****/
+
+@media screen and (max-width:1024px) and (max-height:800px){
+	.lightbox-caption {
+		padding: 3%;
+	}
+}
+
+/***** Max width 1024px and Max height 640px *****/
+
+@media screen and (max-width:1024px) and (max-height:640px){
+	.share-icons {
+		margin-top: 3%;
+	}
+	.lightbox-caption .read-more a.more {
+		margin-top: 1%;
+	}
+	.lightbox-navigation .previous,
+	.lightbox-navigation .next {
+		margin-top: 0;
+	}
+	.lightbox-caption p {
+		display: none;
+	}
+	.lightbox-caption .read-more a.more {
+		margin-top: 1%;
+	}
+}
+
+/***** Max width 1024px and Max height 420px *****/
+
+@media screen and (max-width:1024px) and (max-height:420px){
+	.gallery-items li .category-2 {
+		display: none;
+	}
+	.lightbox-caption .read-more a.more {
+		margin-top: 2%;
+	}
+}
+
+/***** Max width 420px and Max height 768px *****/
+
+@media screen and (max-width:420px) and (max-height:768px){
+	.lightbox-caption .read-more a.more {
+		margin-top: 3%;
+	}
+}
