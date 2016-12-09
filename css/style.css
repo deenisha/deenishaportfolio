@@ -986,8 +986,7 @@ a.tooltip-1 b {
 .lightbox-caption .category-2,
 .gallery-items li .lightbox .image-wrap,
 a.tooltip-1 span,
-a.tooltip-2 span,
-.share-icons a {
+a.tooltip-2 span {
 	opacity: 0;
 }
 .gallery input.selector-all:checked ~ .gallery-items li,
@@ -1004,8 +1003,7 @@ a.tooltip-2 span,
 .gallery-items li .lightbox:target .image-wrap,
 .lightbox-navigation,
 a.tooltip-1:hover span,
-a.tooltip-2:hover span,
-.lightbox:target .lightbox-caption > .share-icons a {
+a.tooltip-2:hover span {
 	opacity: 1;
 }
 .gallery input:checked ~ .gallery-items li:not(div) {
@@ -1034,8 +1032,7 @@ a.tooltip-2:hover span,
 	transition: all 0.3s ease-in-out;
 }
 a.tooltip-1 span,
-a.tooltip-2 span,
-.share-icons a {
+a.tooltip-2 span {
 	-webkit-transition: opacity 0.2s ease-in-out;
 	-moz-transition: opacity 0.2s ease-in-out;
 	-o-transition: opacity 0.2s ease-in-out;
@@ -1207,14 +1204,6 @@ a.tooltip-2 span,
 	6. Responsive queries - Width
 ---------------------------------------------------*/
 
-/***** Max width 1366px *****/
-
-@media screen and (max-width:1366px){
-	.share-icons {
-		margin-left: 0;
-		width: 100%;
-	}
-}
 
 /***** Max width 1024px *****/
 
@@ -1264,10 +1253,6 @@ a.tooltip-2 span,
 		-o-transition-delay: 1s !important;
 		-ms-transition-delay: 1s !important;
 		transition-delay: 1s !important;
-	}
-	.share-icons {
-		width: 30%;
-		margin: 5% 0 0 10%;
 	}
 	
 	.lightbox-navigation {
@@ -1320,9 +1305,6 @@ a.tooltip-2 span,
 	}
 	.lightbox-caption .read-more a.more {
 		padding: 3%;
-	}
-	.share-icons {
-		display: none; /* We need to hide share icons because of lack of horizontal space */
 	}
 }
 
@@ -1397,9 +1379,7 @@ a.tooltip-2 span,
 /***** Min width 1025px and Max height 480px *****/
 
 @media screen  and (min-width:1025px) and (max-height:480px){
-	.share-icons {
-		display: none;
-	}
+
 	.lightbox-caption p {
 		overflow: hidden;
 		white-space: nowrap;
@@ -1436,9 +1416,6 @@ a.tooltip-2 span,
 /***** Max width 1024px and Max height 640px *****/
 
 @media screen and (max-width:1024px) and (max-height:640px){
-	.share-icons {
-		margin-top: 3%;
-	}
 	.lightbox-caption .read-more a.more {
 		margin-top: 1%;
 	}
